@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+
+  <!-- TASK METADATA -->
+  <RegistrationInfo>
+    <Date>2026-04-01T16:31:43.873980</Date>
+    <Author>Haris Khan</Author>
+    <Description>
+      SHL Medical Lab Data Pipeline — Automated hourly transfer
+      of sensor data from Local_Lab_PC to Central_Server.
+      Runs step2_pipeline_agent.py every hour automatically.
+      Project: Automated Lab Data Pipeline Simulator, April 2026.
+    </Description>
+    <URI>\SHL_Lab_Pipeline</URI>
+  </RegistrationInfo>
+
+  <!-- TRIGGER: Run every hour, starting now -->
+  <Triggers>
+    <TimeTrigger>
+      <Repetition>
+        <Interval>PT1H</Interval>       <!-- PT1H = every 1 hour -->
+        <StopAtDurationEnd>false</StopAtDurationEnd>
+      </Repetition>
+      <StartBoundary>2026-04-01T16:00:00</StartBoundary>
+      <Enabled>true</Enabled>
+    </TimeTrigger>
+  </Triggers>
+
+  <!-- SETTINGS -->
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <ExecutionTimeLimit>PT10M</ExecutionTimeLimit>  <!-- max 10 min run time -->
+    <Priority>7</Priority>
+    <Enabled>true</Enabled>
+  </Settings>
+
+  <!-- ACTION: Run Python pipeline script -->
+  <Actions Context="Author">
+    <Exec>
+      <Command>C:\Users\user\AppData\Local\Programs\Python\Python311\python.exe</Command>
+      <Arguments>"C:\Users\user\Downloads\lab_data_pipeline_simulator\step2_pipeline_agent.py"</Arguments>
+      <WorkingDirectory>C:\Users\user\Downloads\lab_data_pipeline_simulator</WorkingDirectory>
+    </Exec>
+  </Actions>
+
+</Task>

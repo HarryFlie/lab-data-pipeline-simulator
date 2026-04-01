@@ -1,0 +1,14 @@
+[
+  {
+    "transfer_timestamp": "2026-04-01 16:25:02",
+    "original_filename": "sensor_data.csv",
+    "tagged_filename": "20260401_162502_BIOSENSOR-01_HK-001_sensor_data.csv",
+    "source_folder": "Local_Lab_PC",
+    "destination_folder": "Central_Server",
+    "operator_id": "HK-001",
+    "instrument_id": "BIOSENSOR-01",
+    "checksum_md5": "27f7299a2e926736cdfb027bb19f9485",
+    "integrity_verified": true,
+    "status": "SUCCESS"
+  }
+]
